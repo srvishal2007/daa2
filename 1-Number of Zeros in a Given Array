@@ -1,0 +1,114 @@
+Problem Statement
+Given an array of 1s and 0s this has all 1s first followed by all 0s. Aim is to find the number of 0s. Write a program using Divide and Conquer to Count the number of zeroes in the given array.
+Input Format
+   First Line Contains Integer m – Size of array
+   Next m lines Contains m numbers – Elements of an array
+Output Format
+   First Line Contains Integer – Number of zeroes present in the given array.
+
+
+
+
+Answer:(penalty regime: 0 %)
+
+Feedback
+Input	Expected	Got	
+5
+1
+1
+1
+0
+0
+2
+2
+10
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+0
+0
+8
+0
+0
+0
+0
+0
+0
+0
+0
+8
+8
+17
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+0
+0
+2
+2
+Passed all tests!  
+
+Correct
+Marks for this submission: 1.00/1.00.
+Finish review
+
+
+#include <stdio.h>
+
+int countZeros(int arr[], int low, int high) {
+
+    
+    if(low == high) {
+        if(arr[low] == 0)
+            return 1;
+        else
+            return 0;
+    }
+
+    
+    int mid = (low + high) / 2;
+
+    
+    int left = countZeros(arr, low, mid);
+    int right = countZeros(arr, mid + 1, high);
+
+
+    return left + right;
+}
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int arr[n];
+
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int count = countZeros(arr, 0, n - 1);
+
+    printf("%d", count);
+
+    return 0;
+}
+

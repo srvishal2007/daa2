@@ -1,0 +1,62 @@
+Convert the following algorithm into a program and find its time complexity using counter method.
+
+void reverse(int n)
+{
+   int rev = 0, remainder;
+   while (n != 0) 
+    {
+        remainder = n % 10;
+        rev = rev * 10 + remainder;
+        n/= 10;
+        
+    }
+print(rev);
+}
+ 
+Note: No need of counter increment for declarations and scanf() and  count variable printf() statements.
+
+Input:
+ A positive Integer n
+Output:
+Print the value of the counter variable
+
+Answer:
+
+Feedback
+Input	Expected	Got	
+12
+11
+11
+1234
+19
+19
+Passed all tests!  
+
+Correct
+Marks for this submission: 1.00/1.00.
+Finish review
+
+#include<stdio.h>
+void reverse(int n)
+{
+   int count=1;
+   int rev = 0, remainder;count++;
+   while (n != 0) 
+    {
+        count+=4;
+        remainder = n % 10;
+        rev = rev * 10 + remainder;
+        n/= 10;
+        
+    }
+    count++;
+    printf("%d",count);
+}
+
+int main(){
+    int n;
+    scanf("%d",&n);
+    reverse(n);
+}
+
+Data retention summary

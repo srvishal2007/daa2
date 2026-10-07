@@ -1,0 +1,60 @@
+Convert the following algorithm into a program and find its time complexity using counter method.
+ Factor(num) {
+ {
+    for (i = 1; i <= num;++i)
+    {
+     if (num % i== 0)
+        {
+          printf("%d ", i);
+        }        
+     } 
+  }
+ 
+ 
+Note: No need of counter increment for declarations and scanf() and counter variable printf() statement.
+
+Input:
+ A positive Integer n
+Output:
+Print the value of the counter variable
+
+Answer:
+
+Feedback
+Input	Expected	Got	
+12
+31
+31
+25
+54
+54
+4
+12
+12
+Passed all tests!  
+
+Correct
+Marks for this submission: 1.00/1.00.
+
+#include<stdio.h>
+void Factor( int num) 
+ {
+     int count=1;
+     
+    for (int i = 1; i <= num;++i)
+    {
+        count+=2;
+     if (num % i== 0)
+        {
+            count++;
+          
+        }        
+     } 
+     printf("%d",count);
+  }
+  
+int main(){
+     int num;
+     scanf("%d",&num);
+     Factor(num);
+ }
